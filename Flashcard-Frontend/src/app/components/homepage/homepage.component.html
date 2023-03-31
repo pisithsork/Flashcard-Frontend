@@ -1,0 +1,18 @@
+<h2>Flashcards</h2>
+
+<!-- <ul>
+    <li *ngFor="let flashcard of flashcards">
+        Question:{{ flashcard.question }}
+        <p *ngIf="show">Answer: {{ flashcard.answer }}</p>
+        <button (click)="toShow()" type="button">Show</button>
+    </li>
+    
+</ul> -->
+<div>
+    <div *ngFor="let flashcard of flashcards">
+        <app-flashcard-display
+        [flashcardInfo]= "flashcard">
+        </app-flashcard-display>
+    </div>
+
+</div>

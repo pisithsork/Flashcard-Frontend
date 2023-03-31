@@ -1,0 +1,10 @@
+
+
+<ul>
+    <li>
+        Question:{{ flashcardInfo.question }}
+        <p *ngIf="show">Answer: {{ flashcardInfo.answer }}</p>
+        <button (click)="toShow()" type="button">Answer</button>
+    </li>
+    
+</ul>
