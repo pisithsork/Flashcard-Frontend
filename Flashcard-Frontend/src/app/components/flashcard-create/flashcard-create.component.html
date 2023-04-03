@@ -1,19 +1,21 @@
-<div class="container-fluid">
-    <button class="hero-btn button" (click)="back()">Back</button>
-    <div class="row justify-content-center align-content-center p-4">
-        <h2 class="text-center">Create Flashcard</h2>
+<div class="row justify-content-center">
 
-        <div class="col border border-success border-3 rounded mx-5">
-                <div class="form-group">
-                    <label for="new-question-label">Enter Question</label>
-                    <input type="text" class="form-control" id="new-question-input" required />
-                </div>
-                <div class="form-group">
-                    <label for="new-answer-label">Enter Answer</label>
-                    <input type="text" class="form-control" id="new-answer-input" required />
-                </div>
-                <button class="hero-btn button" (click)="submit()">Submit</button>
+    <h2 class="text-center">Create Flashcard</h2>
 
+    <div class="card" style="width: 18rem;">
+        <div class="card-text">
+            <h4 for="new-question-label">Enter Question</h4>
+            <input type="text" class="form-control" id="new-question-input" required />
         </div>
+        <div class="card-text">
+            <h4 for="new-answer-label">Enter Answer</h4>
+            <input type="text" class="form-control" id="new-answer-input" required />
+        </div>
+        <div>
+            <button class="btn btn-primary" (click)="submit()">Submit</button>
+            <button class="btn btn-warning" (click)="back()">Back</button>
+        </div>
+
     </div>
+
 </div>

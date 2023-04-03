@@ -10,7 +10,7 @@
     <h5 class="card-header">Question {{flashcardInfo.id}}</h5>
     <div class="card-body">
         <p class="card-text">{{flashcardInfo.question}}</p>
-        <p *ngIf="show" class="card-text">{{ flashcardInfo.answer }}</p>
-        <button (click)="toShow()" type="button" class="btn btn-outline-primary">Show Answer</button>
+        <p id="answer-text" *ngIf="show" class="card-text">{{ flashcardInfo.answer }}</p>
+        <button (click)="toShow()" type="button" class="btn btn-outline-primary">{{ show == true ? 'Hide Answer' : 'Show Answer' }}</button>
     </div>
 </div>
