@@ -22,4 +22,8 @@ export class HomepageComponent implements OnInit {
     );
   }
 
+  addFlashcard(): void{
+    this.router.navigateByUrl('/addflashcard')
+  }
+
 }

@@ -1,10 +1,16 @@
-
-
-<ul>
+<!-- <ul>
     <li>
         Question:{{ flashcardInfo.question }}
         <p *ngIf="show">Answer: {{ flashcardInfo.answer }}</p>
         <button (click)="toShow()" type="button">Answer</button>
     </li>
-    
-</ul>
+
+</ul> -->
+<div class="card" style="width: 18rem;">
+    <h5 class="card-header">Question {{flashcardInfo.id}}</h5>
+    <div class="card-body">
+        <p class="card-text">{{flashcardInfo.question}}</p>
+        <p *ngIf="show" class="card-text">{{ flashcardInfo.answer }}</p>
+        <button (click)="toShow()" type="button" class="btn btn-outline-primary">Show Answer</button>
+    </div>
+</div>
