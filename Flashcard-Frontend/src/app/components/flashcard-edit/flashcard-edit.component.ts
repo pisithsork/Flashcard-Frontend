@@ -14,6 +14,7 @@ export class FlashcardEditComponent {
 
   editForm!: FormGroup;
   @Input() data!: flashcard; // receive data from parent
+  
   constructor(private router: Router, private flashcardService: flashcardService, private formBuilder: FormBuilder) {
     this.editForm = this.formBuilder.group({
       question: ['', Validators.required],

@@ -1,23 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FlashcardDisplayComponent } from './flashcard-display.component';
+import { Router } from '@angular/router';
 
 describe('FlashcardDisplayComponent', () => {
   let component: FlashcardDisplayComponent;
   let fixture: ComponentFixture<FlashcardDisplayComponent>;
+  let spyRouter: jasmine.SpyObj<Router>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ FlashcardDisplayComponent ]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(FlashcardDisplayComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    component = new FlashcardDisplayComponent(spyRouter);
   });
 
-  it('should create', () => {
+  it('should create flashcard-display', () => {
     expect(component).toBeTruthy();
   });
 });

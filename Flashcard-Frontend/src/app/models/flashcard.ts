@@ -8,4 +8,5 @@ export class flashcard{
         this.question = question;
         this.answer = answer;
     }
+    contructor(){}
 }
