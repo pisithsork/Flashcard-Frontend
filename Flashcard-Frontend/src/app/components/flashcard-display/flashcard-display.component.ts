@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './flashcard-display.component.html',
   styleUrls: ['./flashcard-display.component.css']
 })
-export class FlashcardDisplayComponent implements OnInit {
+export class FlashcardDisplayComponent {
 
   constructor(private router: Router){}
 
@@ -19,8 +19,7 @@ export class FlashcardDisplayComponent implements OnInit {
   @ViewChild('answer-text', { static: false }) currentAnswerInput!: ElementRef;
 
 
-  ngOnInit(): void {
-  }
+
 
   toShow(): void {
     if (this.show == false) {

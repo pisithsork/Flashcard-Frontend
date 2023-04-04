@@ -7,8 +7,12 @@
       "jasmine"
     ]
   },
+  "files": [
+    "src/test.ts"
+  ],
   "include": [
     "src/**/*.spec.ts",
-    "src/**/*.d.ts"
+    "src/**/*.d.ts",
+    "src/app/models/*.spec.ts",
   ]
 }

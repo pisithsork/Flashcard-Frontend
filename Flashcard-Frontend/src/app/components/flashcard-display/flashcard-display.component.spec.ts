@@ -10,9 +10,23 @@ describe('FlashcardDisplayComponent', () => {
 
   beforeEach(async () => {
     component = new FlashcardDisplayComponent(spyRouter);
+    var show = false;
   });
 
   it('should create flashcard-display', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should call toShow', () => {
+    component.show = false;
+    component.toShow();
+    expect(component.show).toBe(true);
+  })
+
+  it('should call toEdit', () => {
+    component.edit = true;
+    component.toEdit();
+    expect(component.edit).toBe(false);
+  })
+
 });

@@ -2,9 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomepageComponent } from './homepage.component';
 import { Router } from '@angular/router';
 import { flashcardService } from '../../services/flashcardService';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { FormBuilder } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { flashcard } from '../../models/flashcard';
+import { defer } from 'rxjs/internal/observable/defer';
 
 describe('HomepageComponent', () => {
   let component: HomepageComponent;
@@ -14,14 +13,7 @@ describe('HomepageComponent', () => {
 
   beforeEach(async () => {
     spyRouter = jasmine.createSpyObj(['navigateByUrl']);
-    TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, HttpClientModule],
-      providers: [{ provide: Router, useValue: spyRouter }]
-    }).compileComponents().then(() => {
-      fixture = TestBed.createComponent(HomepageComponent);
-      component = fixture.componentInstance;
-    });
-
+    component = new HomepageComponent(spyService, spyRouter);
   });
 
   it('should create homepage', () => {
@@ -29,12 +21,15 @@ describe('HomepageComponent', () => {
   });
 
   it('should call ngOnInit'), () => {
+    var flashcards: flashcard[];
+    spyService.getData.and.returnValue(defer(() => Promise.resolve(flashcards)));
     component.ngOnInit();
-    expect(component.ngOnInit).toHaveBeenCalled;
+    expect(component.flashcards != null);
   }
 
-  // it('should call Flashcard', () => {
-  //   component.addFlashcard();
-  //   expect(spyRouter).toHaveBeenCalled();
-  // });
+  it('should call addFlashcard', () => {
+    component.addFlashcard();
+    spyRouter.navigateByUrl.and.callFake;
+    expect(spyRouter.navigateByUrl.calls.count()).toBe(1);
+  });
 });

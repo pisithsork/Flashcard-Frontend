@@ -9,7 +9,7 @@ import { flashcardService } from '../../services/flashcardService';
   templateUrl: './flashcard-create.component.html',
   styleUrls: ['./flashcard-create.component.css']
 })
-export class FlashcardCreateComponent implements OnInit {
+export class FlashcardCreateComponent {
   formdata: any;
   newflashcard: flashcard = new flashcard(0, "", "");
   public questionAnswerForm!: FormGroup;
@@ -19,10 +19,6 @@ export class FlashcardCreateComponent implements OnInit {
       question: ['', Validators.required],
       answer: ['', Validators.required]
     });
-  }
-
-  ngOnInit(): void {
-
   }
 
   submit(): void {
