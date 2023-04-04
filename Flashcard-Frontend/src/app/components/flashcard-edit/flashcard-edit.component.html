@@ -1,0 +1,36 @@
+<div class="modal-fullscreen-md-down" id="flashcard-edit" tabindex="-1" aria-labelledby="flashcard-edit-Label"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Flashcard Edit</h1>
+            </div>
+            <div class="modal-body">
+                <form *ngIf="editForm" [formGroup]="editForm">
+                    <div class="mb-3">
+                        <label for="question" class="col-form-label">Question:</label>
+                        <input type="text" formControlName="question" class="form-control" id="new-question" [placeholder]="data.question">
+                        <div class="required-text" *ngIf="editForm.get('question')?.invalid && editForm.get('question')?.touched">
+                            <div *ngIf="editForm.get('question')?.errors?.['required']">Question is required</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label type="text" for="answer" class="col-form-label">Answer:</label>
+                        <input class="form-control" formControlName="answer" id="new-answer" [placeholder]="data.answer">
+                        <div
+                            *ngIf="editForm.get('answer')?.invalid && (editForm.get('answer')?.dirty || editForm.get('answer')?.touched)">
+                            <div class="required-text" *ngIf="editForm.get('answer')?.errors?.['required']">Answer is required</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" (click)="editflashcard()" type="submit" [disabled]="editForm.invalid">Submit</button>
+                    <!-- <button class="btn btn-warning" data-bs-dismiss="modal">Back</button> -->
+                </form>
+
+            </div>
+            <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)="editflashcard()">Submit</button>
+            </div> -->
+        </div>
+    </div>
+</div>

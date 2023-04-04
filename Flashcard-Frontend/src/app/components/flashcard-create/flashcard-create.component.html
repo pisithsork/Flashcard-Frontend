@@ -3,18 +3,29 @@
     <h2 class="text-center">Create Flashcard</h2>
 
     <div class="card" style="width: 18rem;">
-        <div class="card-text">
-            <h4 for="new-question-label">Enter Question</h4>
-            <input type="text" class="form-control" id="new-question-input" required />
-        </div>
-        <div class="card-text">
-            <h4 for="new-answer-label">Enter Answer</h4>
-            <input type="text" class="form-control" id="new-answer-input" required />
-        </div>
-        <div>
+        <form *ngIf="questionAnswerForm" [formGroup]="questionAnswerForm">
+            <div class="card-text">
+                <label for="question">Enter Question</label>
+                <input type="text" formControlName="question" class="form-control" id="new-question-input" />
+                <div *ngIf="questionAnswerForm.get('question')?.invalid && questionAnswerForm.get('question')?.touched">
+                    <div class="required-text" *ngIf="questionAnswerForm.get('question')?.errors?.['required']">Question is required</div>
+                </div>
+            </div>
+            <div class="card-text">
+                <label for="answer">Answer:</label>
+                <input type="text" formControlName="answer" class="form-control" id="new-answer-input" />
+                <div *ngIf="questionAnswerForm.get('answer')?.invalid && (questionAnswerForm.get('answer')?.dirty || questionAnswerForm.get('answer')?.touched)">
+                  <div class="required-text" *ngIf="questionAnswerForm.get('answer')?.errors?.['required']">Answer is required</div>
+                </div>
+            </div>
+            <button class="btn btn-primary" (click)="submit()" type="submit" [disabled]="questionAnswerForm.invalid">Submit</button>
+            <button class="btn btn-warning" (click)="back()">Back</button>
+        </form>
+
+        <!-- <div>
             <button class="btn btn-primary" (click)="submit()">Submit</button>
             <button class="btn btn-warning" (click)="back()">Back</button>
-        </div>
+        </div> -->
 
     </div>
 

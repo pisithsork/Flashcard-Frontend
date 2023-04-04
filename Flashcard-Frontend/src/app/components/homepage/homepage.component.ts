@@ -6,7 +6,7 @@ import { flashcardService } from '../../services/flashcardService';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.css']
+  styleUrls: ['./homepage.component.css'],
 })
 export class HomepageComponent implements OnInit {
 
@@ -25,5 +25,7 @@ export class HomepageComponent implements OnInit {
   addFlashcard(): void{
     this.router.navigateByUrl('/addflashcard')
   }
+
+
 
 }

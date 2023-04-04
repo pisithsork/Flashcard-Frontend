@@ -19,4 +19,9 @@ export class flashcardService {
         console.log(`ID: ${newflashcard.id}Question: ${newflashcard.question}Answer: ${newflashcard.answer}`);
         return this.http.post<any>(this.BaseUrl+"/api/Flashcards", newflashcard);
     }
+
+    public editflashcard(editflashcard: flashcard){
+        console.log(`ID: ${editflashcard.id}Question: ${editflashcard.question}Answer: ${editflashcard.answer}`);
+        return this.http.put<any>(this.BaseUrl+`/api/Flashcards/${editflashcard.id}`, editflashcard);
+    }
 }

@@ -6,18 +6,22 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { FlashcardDisplayComponent } from './components/flashcard-display/flashcard-display.component';
 import { FlashcardCreateComponent } from './components/flashcard-create/flashcard-create.component';
+import { FlashcardEditComponent } from './components/flashcard-edit/flashcard-edit.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
     FlashcardDisplayComponent,
-    FlashcardCreateComponent
+    FlashcardCreateComponent,
+    FlashcardEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

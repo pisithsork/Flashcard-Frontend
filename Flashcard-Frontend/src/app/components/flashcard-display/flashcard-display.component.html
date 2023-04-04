@@ -1,16 +1,40 @@
-<!-- <ul>
-    <li>
-        Question:{{ flashcardInfo.question }}
-        <p *ngIf="show">Answer: {{ flashcardInfo.answer }}</p>
-        <button (click)="toShow()" type="button">Answer</button>
-    </li>
-
-</ul> -->
 <div class="card" style="width: 18rem;">
     <h5 class="card-header">Question {{flashcardInfo.id}}</h5>
-    <div class="card-body">
-        <p class="card-text">{{flashcardInfo.question}}</p>
-        <p id="answer-text" *ngIf="show" class="card-text">{{ flashcardInfo.answer }}</p>
-        <button (click)="toShow()" type="button" class="btn btn-outline-primary">{{ show == true ? 'Hide Answer' : 'Show Answer' }}</button>
-    </div>
+
 </div>
+<div class="card-body">
+    <p id="question-text" class="card-text">{{flashcardInfo.question}}</p>
+    <p id="answer-text" *ngIf="show" class="card-text">{{ flashcardInfo.answer }}</p>
+    <button (click)="toShow()" type="button" class="btn btn-outline-primary">{{ show == true ? 'Hide Answer' : 'Show Answer' }}</button>
+
+    <button type="button" class="btn btn-outline-primary" (click)="toEdit()">
+        Edit
+    </button>
+
+    <!-- <div class="modal fade" id="flashcard-edit" tabindex="-1" aria-labelledby="flashcard-edit-Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Flashcard Edit</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="new-question" class="col-form-label">Question: {{flashcardInfo.question}}</label>
+                            <input type="text" class="form-control" id="new-question" #currentQuestionInput>
+                        </div>
+                        <div class="mb-3">
+                            <label for="new-answer" class="col-form-label">Answer:</label>
+                            <input class="form-control" id="new-answer" #currentAnswerInput>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>    <app-flashcard-edit [data]="flashcardInfo" *ngIf="edit">
+
+    </app-flashcard-edit>

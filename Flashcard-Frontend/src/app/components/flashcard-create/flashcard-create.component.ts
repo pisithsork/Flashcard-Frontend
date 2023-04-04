@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { flashcard } from '../../models/flashcard';
 import { flashcardService } from '../../services/flashcardService';
@@ -12,8 +12,14 @@ import { flashcardService } from '../../services/flashcardService';
 export class FlashcardCreateComponent implements OnInit {
   formdata: any;
   newflashcard: flashcard = new flashcard(0, "", "");
+  public questionAnswerForm!: FormGroup;
 
-  constructor(private router: Router, private flashcardService: flashcardService) { }
+  constructor(private router: Router, private flashcardService: flashcardService, private formBuilder: FormBuilder) {
+    this.questionAnswerForm = this.formBuilder.group({
+      question: ['', Validators.required],
+      answer: ['', Validators.required]
+    });
+  }
 
   ngOnInit(): void {
 
