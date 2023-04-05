@@ -4,6 +4,6 @@ export const environment = {
     baseUrl: "https://localhost:7041",
     headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'http://localhost:4200',
+        'Access-Control-Allow-Origin': 'https://thankful-sea-0218b6a10.2.azurestaticapps.net',
     },
 };

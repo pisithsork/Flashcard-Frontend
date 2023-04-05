@@ -2,12 +2,13 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import { Observable } from "rxjs";
 import { flashcard } from "../models/flashcard";
+import { environment } from "../../environment/environment.prod";
 
 @Injectable({
     providedIn: 'root'
 })
 export class flashcardService {
-    private BaseUrl: string = "https://localhost:7041";
+    private BaseUrl: string = `${environment.baseUrl}`;
 
     constructor(private http: HttpClient){}
 
