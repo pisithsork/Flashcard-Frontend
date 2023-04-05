@@ -8,6 +8,7 @@ import { FlashcardDisplayComponent } from './components/flashcard-display/flashc
 import { FlashcardCreateComponent } from './components/flashcard-create/flashcard-create.component';
 import { FlashcardEditComponent } from './components/flashcard-edit/flashcard-edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -15,13 +16,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomepageComponent,
     FlashcardDisplayComponent,
     FlashcardCreateComponent,
-    FlashcardEditComponent
+    FlashcardEditComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

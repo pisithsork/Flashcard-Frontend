@@ -1,8 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, NgModule } from '@angular/core';
 import { flashcard } from '../../models/flashcard';
 import { flashcardService } from '../../services/flashcardService';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 
 @Component({

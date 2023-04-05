@@ -19,13 +19,8 @@ describe('HomepageComponent', () => {
   it('should create homepage', () => {
     expect(component).toBeTruthy();
   });
+  it('')
 
-  it('should call ngOnInit'), () => {
-    var flashcards: flashcard[];
-    spyService.getData.and.returnValue(defer(() => Promise.resolve(flashcards)));
-    component.ngOnInit();
-    expect(component.flashcards != null);
-  }
 
   it('should call addFlashcard', () => {
     component.addFlashcard();
