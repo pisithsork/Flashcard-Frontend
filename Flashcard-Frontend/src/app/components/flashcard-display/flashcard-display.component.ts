@@ -15,6 +15,7 @@ export class FlashcardDisplayComponent {
   public edit = false;
 
   @Input() flashcardInfo!: flashcard;
+  @Input() counter!: number;
   @ViewChild('question-text', { static: false }) currentQuestionInput!: ElementRef;
   @ViewChild('answer-text', { static: false }) currentAnswerInput!: ElementRef;
 

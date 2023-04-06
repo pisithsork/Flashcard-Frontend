@@ -2,8 +2,8 @@
 
 <button class="btn btn-primary" (click)="addFlashcard()" type="button">Add new Flashcard</button>
 <div class="row row-cols-1 row-cols-md-4 g-4">
-    <ng-container class="col" *ngFor="let flashcard of flashcards">
-        <app-flashcard-display [flashcardInfo]="flashcard">
+    <ng-container class="col" *ngFor="let flashcard of flashcards, let i = index">
+        <app-flashcard-display [flashcardInfo]="flashcard" [counter]="i">
         </app-flashcard-display>
     </ng-container>
 </div>
